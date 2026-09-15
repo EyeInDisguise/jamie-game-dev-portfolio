@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A case study of Jamie Williams's Unity platformer controlled with physical RFID ability tokens.">
+  <meta name="theme-color" content="#e6e3d5">
+  <link rel="canonical" href="https://jamiegamedev.me/projects/rfid-platformer/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2336372f'/%3E%3Cpath d='M17 18v18c0 9 5 13 14 13 10 0 16-5 16-16V18h-8v16c0 6-2 8-7 8-4 0-7-2-7-7V18z' fill='%23e6e3d5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/case.css">
+  <title>RFID Abilities Platformer — Jamie Williams</title>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page">
+    <header>
+      <a class="wordmark" href="/">JW<span> / JAMIE WILLIAMS</span></a>
+      <nav aria-label="Case study navigation"><a href="/">Home</a><a href="https://play.unity.com/en/games/51c4cc8b-b2fc-4f07-a06d-968e66fd5fc3/polished">Play ↗</a><a href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026">Source ↗</a></nav>
+    </header>
+    <main id="main" class="case-study">
+      <section class="case-hero">
+        <p class="eyebrow"><span class="square" aria-hidden="true"></span> CASE STUDY 01 / UNITY + PHYSICAL INPUT</p>
+        <h1>RFID Abilities<br><em>Platformer.</em></h1>
+        <div class="case-lead"><p>A small platformer where physical RFID tokens select movement abilities inside Unity.</p><p>I built the original version solo in two to three days, then kept developing the controller, movement and game systems.</p></div>
+        <div class="case-actions"><a class="button" href="https://play.unity.com/en/games/51c4cc8b-b2fc-4f07-a06d-968e66fd5fc3/polished">Play in browser <span>↗</span></a><a class="outline-button" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026">View source <span>↗</span></a></div>
+      </section>
+      <section class="case-facts" aria-label="Project facts"><div><span>Role</span><strong>Solo developer</strong></div><div><span>Tools</span><strong>Unity, C#, ESP32</strong></div><div><span>Input</span><strong>RFID + Bluetooth HID</strong></div><div><span>Status</span><strong>In development</strong></div></section>
+      <section class="case-section case-two-column"><div><p class="section-number">01 / THE IDEA</p><h2>Taking abilities off the keyboard</h2></div><div><p>The project grew from a previous gravity-themed jam game and the physical interaction of toys-to-life games such as Disney Infinity. Each token represents an ability: dash, wall jump, gravity flip or time stop.</p><p>Scanning a token changes the active ability in the game. The same abilities remain available on the number keys, so the browser build can be played without the physical controller.</p></div></section>
+      <section class="system-panel" aria-labelledby="signal-title"><div class="system-heading"><p class="section-number">02 / THE SIGNAL PATH</p><h2 id="signal-title">From token to Unity</h2></div><ol class="signal-large"><li><span>01</span><strong>RFID token</strong><small>A physical token is scanned.</small></li><li><span>02</span><strong>MFRC522 reader</strong><small>The reader sends the token ID over SPI.</small></li><li><span>03</span><strong>ESP32</strong><small>The ID is matched to an ability.</small></li><li><span>04</span><strong>Bluetooth HID</strong><small>A number key is sent wirelessly.</small></li><li><span>05</span><strong>Unity</strong><small>The matching ability becomes active.</small></li></ol><p class="system-note">Using Bluetooth HID lets the controller arrive as ordinary keyboard input, keeping the game-side integration straightforward.</p></section>
+      <section class="case-section case-two-column"><div><p class="section-number">03 / GAMEPLAY</p><h2>Making the movement readable</h2></div><div><p>The platforming controller includes acceleration, coyote time, jump buffering and a variable jump height. Moving hazards, HUD feedback and ability-specific visuals help make each state clear while the player is moving.</p><p>The project also includes a leaderboard and ghost replay system, plus tutorial support for both keyboard and RFID input.</p></div></section>
+      <section class="case-section case-two-column"><div><p class="section-number">04 / MOVEMENT TUNING</p><h2>Small windows, deliberate feel</h2></div><div><p>The controller uses separate acceleration and deceleration instead of snapping straight to its target speed. A short input buffer and coyote-time window make jumps more forgiving without removing the need for precise timing.</p><dl class="tuning-grid"><div><dt>Coyote time</dt><dd>0.08 s</dd></div><div><dt>Jump buffer</dt><dd>0.10 s</dd></div><div><dt>Dash duration</dt><dd>0.20 s</dd></div><div><dt>Time stop</dt><dd>3.00 s</dd></div></dl><a class="text-link" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026/blob/main/Assets/Scripts/PlayerController.cs">Inspect PlayerController.cs <span>↗</span></a></div></section>
+      <section class="case-section case-two-column"><div><p class="section-number">05 / TIME TRIAL</p><h2>Racing the fastest run</h2></div><div><p>The ghost recorder samples the player's position during Unity's fixed physics updates and stores each point with a timestamp. Playback finds the samples around the current time and interpolates between them, so the ghost moves smoothly even though the run is stored as discrete frames.</p><p>The leaderboard keeps the five fastest local results. When a new fastest time is submitted, that run becomes the ghost for the next attempt.</p><div class="code-links"><a href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026/blob/main/Assets/Scripts/GhostRecorder.cs">GhostRecorder.cs ↗</a><a href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026/blob/main/Assets/Scripts/GhostPlayback.cs">GhostPlayback.cs ↗</a><a href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026/blob/main/Assets/Scripts/LeaderboardManager.cs">LeaderboardManager.cs ↗</a></div></div></section>
+      <section class="case-section case-two-column"><div><p class="section-number">06 / CURRENT STATE</p><h2>Playable, with more work underway</h2></div><div><p>The browser build is playable now. I am still refining movement feel, visual readability, the HUD, crush and reset behaviour, and leaderboard edge cases.</p><p>Gameplay and controller footage will be added here after the next recording pass.</p></div></section>
+      <section class="case-section case-two-column process-note"><div><p class="section-number">07 / PROCESS</p><h2>How I worked</h2></div><div><p>I designed, built and iterated the project as the solo developer. I used AI tools for programming assistance, debugging, explanations and documentation. The ghost time-trial system involved more substantial assistance because it was one of the harder systems to put together.</p><p>The repository keeps the full source and development notes available for inspection.</p></div></section>
+      <section class="case-end"><p class="eyebrow">PROJECT LINKS</p><div class="case-actions"><a class="button" href="https://play.unity.com/en/games/51c4cc8b-b2fc-4f07-a06d-968e66fd5fc3/polished">Play the build <span>↗</span></a><a class="outline-button" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026">Source and notes <span>↗</span></a><a class="outline-button" lang="ja" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026/blob/main/README.ja.md">日本語 README <span>↗</span></a></div></section>
+    </main>
+    <footer><span>JAMIE WILLIAMS</span><span>GAMEPLAY · SYSTEMS · PHYSICAL INPUT</span><a href="/">Back to portfolio ↑</a></footer>
+  </div>
+</body>
+</html>
