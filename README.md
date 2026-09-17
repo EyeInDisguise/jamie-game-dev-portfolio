@@ -6,7 +6,6 @@ I'm a computer science student at the University of Queensland, focused on gamep
 
 ## Start here
 
-- **[Learning guide](docs/LEARNING.md):** read the page structure, understand the gravity experiment, and make small changes yourself.
 - **[Homepage](dist/index.html):** introduction, projects and About text.
 - **[Gravity experiment](dist/playground.js):** input, movement, collisions, drawing and reset.
 
@@ -34,7 +33,6 @@ A static site built with HTML, CSS and JavaScript. It includes an optional gravi
 | `dist/playground.js` | Gravity experiment |
 | `dist/projects/rfid-platformer/index.html` | Platformer case study |
 | `dist/404.html` | Missing-page response |
-| `docs/LEARNING.md` | Walkthrough and exercises |
 | `preview.cjs` | Local preview server |
 
 ## Run locally
@@ -53,7 +51,7 @@ Select **Play experiment** first. Use A/D or the arrow keys to move, Space to fl
 
 ## Development and assistance
 
-AI tools assisted with the website's design, writing and implementation, including the September 2026 gravity playground and RFID explainer. The learning guide explains that code and provides exercises for understanding and changing it. The Unity project's own process and assistance are described separately in its case study and repository.
+AI tools assisted with the website's design, writing and implementation, including the September 2026 gravity playground and RFID explainer. The Unity project's own process and assistance are described separately in its case study and repository.
 
 ## Publishing
 
