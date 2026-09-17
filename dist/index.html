@@ -1,8 +1,78 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Jamie Williams, UQ computer science student exploring gameplay programming, movement systems and physical input in Unity."><meta name="theme-color" content="#e6e3d5"><link rel="canonical" href="https://jamiegamedev.me/"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2336372f'/%3E%3Cpath d='M17 18v18c0 9 5 13 14 13 10 0 16-5 16-16V18h-8v16c0 6-2 8-7 8-4 0-7-2-7-7V18z' fill='%23e6e3d5'/%3E%3C/svg%3E"><title>Jamie Williams — Gameplay Programmer</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="case.css"><script src="script.js" defer></script></head>
-<body><a class="skip" href="#main">Skip to content</a>
-<div class="page"><header><a class="wordmark" href="#main">JW<span> / JAMIE WILLIAMS</span></a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="https://github.com/EyeInDisguise">GitHub ↗</a></nav></header>
-<main id="main"><section class="intro" aria-labelledby="title"><div class="eyebrow"><span class="square" aria-hidden="true"></span> GAMEPLAY PROGRAMMING / SELECTED WORK</div><div class="intro-grid"><h1 id="title">Jamie<br><em>Williams.</em></h1><div class="intro-copy"><p>I build games around movement, abilities, and the ways we interact with them.</p><p class="muted">Computer science student at the University of Queensland. Working with Unity and C#, with a little hardware in the mix.</p><a class="text-link" href="#work">Explore my work <span aria-hidden="true">↓</span></a></div></div><div class="section-rule"><span>01 — PROJECT ARCHIVE</span><span>PLAY / INSPECT</span></div></section>
-<section id="work" aria-label="Selected projects"><article class="project"><div class="project-heading"><p class="eyebrow">01 / PHYSICAL INPUT × GAMEPLAY</p><span class="status">IN DEVELOPMENT</span></div><div class="project-grid"><div class="media"><div class="media-top"><span>RFID ABILITIES PLATFORMER</span><span>UNITY / ESP32</span></div><div class="media-body"><span class="frame-mark" aria-hidden="true">＋</span><p class="media-number" aria-hidden="true">01</p><h2>A physical token.<br>A different ability.</h2><p class="media-note">Gameplay and controller footage coming soon.</p></div><div class="media-bottom"><span>SOLO HACKATHON PROJECT</span><a href="https://play.unity.com/en/games/51c4cc8b-b2fc-4f07-a06d-968e66fd5fc3/polished" target="_blank" rel="noopener">Play browser demo ↗</a></div></div><div class="project-copy"><h3>RFID Abilities<br>Platformer</h3><p>A speedrun platformer where scanning physical tokens changes your movement abilities. You can also play with a normal keyboard.</p><dl><div><dt>Role</dt><dd>Solo developer</dd></div><div><dt>Built with</dt><dd>Unity · C# · ESP32 · RFID</dd></div><div><dt>First version</dt><dd>2–3 day hackathon</dd></div></dl><p>I connected an RFID reader to an ESP32 that sends Bluetooth keyboard inputs to Unity. The game combines dash, wall jump, gravity flip and time stop.</p><a class="button" href="projects/rfid-platformer/">Read the case study <span>→</span></a><div class="project-links"><a class="source" href="https://play.unity.com/en/games/51c4cc8b-b2fc-4f07-a06d-968e66fd5fc3/polished" target="_blank" rel="noopener">Play game ↗</a><a class="source" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026" target="_blank" rel="noopener">Source ↗</a><a class="source" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026/blob/main/README.ja.md" lang="ja" target="_blank" rel="noopener">日本語 ↗</a></div></div></div><details id="rfid-system"><summary><span><span class="small-index">01.A</span> Inspect the system</span><span class="expand" aria-hidden="true">+</span></summary><div class="inspection"><p class="eyebrow">FROM OBJECT TO ACTION</p><ol class="signal"><li><span>01</span><strong>RFID token</strong><p>Stores an ability string.</p></li><li><span>02</span><strong>Reader + ESP32</strong><p>Reads the token and matches its ability.</p></li><li><span>03</span><strong>Bluetooth input</strong><p>Sends the corresponding number key.</p></li><li><span>04</span><strong>Unity ability</strong><p>Selects the movement ability in-game.</p></li></ol><p class="inspection-note">Unity receives ordinary keyboard input, so the same game works with or without the physical controller.</p></div></details></article>
-<article class="secondary"><div class="secondary-index" aria-hidden="true">02</div><div><p class="eyebrow">TEAM PROJECT / UNITY</p><h3>NRL Tackle</h3><p>Gameplay work in a UQ industry project with Nuaxion, including movement, cameras, enemy tracking and tackle behaviour. A full case study will follow when the project material is ready to share.</p></div><span class="status">CASE STUDY IN PREPARATION</span></article></section>
-<section id="about" class="about"><p class="eyebrow">02 — BEHIND THE WORK</p><div><h2>Interested in how<br>games <em>feel.</em></h2><p>I'm Jamie, a computer science student at UQ. I enjoy building movement systems and exploring how a change in input or a single ability can change the way a game plays.</p><p>I'm drawn to games with atmosphere and a strong sense of place—NieR, Monster Hunter, and stories that stay with you.</p><a class="text-link" href="https://github.com/EyeInDisguise">Find me on GitHub ↗</a></div></section></main><footer><span>JAMIE WILLIAMS</span><span>GAMEPLAY · SYSTEMS · PHYSICAL INPUT</span><a href="#main">Back to top ↑</a></footer></div></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jamie Williams, UQ computer science student focused on gameplay programming. Explore Unity projects, physical input, and a playable gravity experiment.">
+  <meta name="theme-color" content="#e6e3d5">
+  <link rel="canonical" href="https://jamiegamedev.me/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2336372f'/%3E%3Cpath d='M17 18v18c0 9 5 13 14 13 10 0 16-5 16-16V18h-8v16c0 6-2 8-7 8-4 0-7-2-7-7V18z' fill='%23e6e3d5'/%3E%3C/svg%3E">
+  <title>Jamie Williams | Gameplay Programming</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="case.css">
+  <link rel="stylesheet" href="experience.css">
+  <script src="script.js" defer></script>
+  <script src="playground.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page">
+    <header>
+      <a class="wordmark" href="#main">JW<span> / JAMIE WILLIAMS</span></a>
+      <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#playground">Play</a><a href="#about">About</a><a href="https://github.com/EyeInDisguise">GitHub ↗</a></nav>
+    </header>
+    <main id="main">
+      <section class="intro" aria-labelledby="title">
+        <p class="eyebrow">GAMEPLAY PROGRAMMING / UQ COMPUTER SCIENCE</p>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <h1 id="title">Jamie<br><em>Williams.</em></h1>
+            <p class="hero-statement">I make games<br>with Unity.</p>
+            <p class="muted">Computer science at UQ. Currently working on a token-controlled platformer and an NRL tackle game.</p>
+            <a class="text-link" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+          </div>
+          <section id="playground" class="lab" aria-labelledby="lab-title">
+            <div class="lab-heading"><div><p class="eyebrow">INTERACTIVE EXPERIMENT / 01</p><h2 id="lab-title">Gravity playground</h2></div><span class="lab-symbol" aria-hidden="true">↕</span></div>
+            <p class="lab-description">Move along the floor and ceiling to reach all three checkpoints.</p>
+            <div class="lab-viewport">
+              <canvas id="gravity-canvas" width="720" height="300" tabindex="0" aria-label="Gravity playground. Move with A and D or arrow keys. Space flips gravity. Shift dashes. Escape pauses." aria-describedby="lab-instructions">An optional gravity experiment. All portfolio content is available outside this canvas.</canvas>
+              <div id="lab-overlay" class="lab-overlay"><span>01 / MOVEMENT STUDY</span><p>Reach all three<br>checkpoints.</p></div>
+            </div>
+            <div class="lab-readout"><span id="lab-state" role="status">Ready to play</span><span><span id="lab-score">0 / 3</span> CHECKPOINTS</span></div>
+            <div class="lab-actions"><button id="lab-start" type="button" disabled>Play experiment</button><button id="lab-reset" type="button" disabled>Reset</button><label class="debug-toggle"><input id="lab-debug" type="checkbox"> Inspect physics</label></div>
+            <div class="touch-controls" aria-label="Playground controls"><button type="button" data-control="left" aria-label="Move left" disabled>←</button><button type="button" data-control="right" aria-label="Move right" disabled>→</button><button type="button" data-control="flip" disabled>Flip ↕</button><button type="button" data-control="dash" disabled>Dash</button></div>
+            <p id="lab-instructions" class="lab-instructions"><kbd>A</kbd> <kbd>D</kbd> move · <kbd>Space</kbd> flip · <kbd>Shift</kbd> dash · <kbd>Esc</kbd> pause. Touch controls work too.</p>
+            <details class="lab-details"><summary>What changes the feel? <span aria-hidden="true">+</span></summary><div><label for="gravity-strength">Gravity <output id="gravity-value" for="gravity-strength">1,000</output></label><input id="gravity-strength" type="range" min="400" max="1800" step="100" value="1000"><p>More gravity pulls you toward a surface faster. Flip preserves your momentum, so changing direction takes a moment. This browser experiment is separate from the Unity game below.</p></div></details>
+            <noscript><p>Enable JavaScript to play the experiment. The projects and case study work without it.</p></noscript>
+          </section>
+        </div>
+        <div class="section-rule"><span>01 / SELECTED WORK</span><span>PLAY / INSPECT</span></div>
+      </section>
+      <section id="work" aria-label="Selected projects">
+        <article class="project">
+          <div class="project-heading"><p class="eyebrow">01 / PHYSICAL INPUT × GAMEPLAY</p><span class="status">PLAYABLE / IN DEVELOPMENT</span></div>
+          <div class="project-grid">
+            <div class="token-panel">
+              <div class="media-top"><span>RFID ABILITIES PLATFORMER</span><span>INPUT EXPLAINER</span></div>
+              <p class="token-prompt">Explore the<br><em>four abilities.</em></p>
+              <div class="token-options" role="group" aria-label="Explore the RFID abilities">
+                <button type="button" data-ability="dash" aria-pressed="true"><span aria-hidden="true">01</span>Dash</button>
+                <button type="button" data-ability="wall" aria-pressed="false"><span aria-hidden="true">02</span>Wall jump</button>
+                <button type="button" data-ability="gravity" aria-pressed="false"><span aria-hidden="true">03</span>Gravity</button>
+                <button type="button" data-ability="time" aria-pressed="false"><span aria-hidden="true">04</span>Time stop</button>
+              </div>
+              <div class="token-result" aria-live="polite"><span class="eyebrow" id="token-key">BLUETOOTH INPUT / KEY 1</span><h3 id="token-title">Dash</h3><p id="token-description">Select a burst of movement to cross a gap. The ESP32 sends the same number key you can press on a keyboard.</p></div>
+              <div class="media-bottom"><span>SYSTEM DEMONSTRATION</span><a href="#rfid-system">Follow the signal ↓</a></div>
+            </div>
+            <div class="project-copy"><h2>RFID Abilities<br>Platformer</h2><p>A speedrun platformer where scanning physical tokens changes your movement abilities. You can also play with a normal keyboard.</p><dl><div><dt>Role</dt><dd>Solo developer</dd></div><div><dt>Built with</dt><dd>Unity · C# · ESP32 · RFID</dd></div><div><dt>First version</dt><dd>2–3 day hackathon</dd></div></dl><p>I connected an RFID reader to an ESP32 that sends Bluetooth keyboard inputs to Unity. The game combines dash, wall jump, gravity flip and time stop.</p><a class="button" href="projects/rfid-platformer/">Read the case study <span aria-hidden="true">→</span></a><div class="project-links"><a class="source" href="https://play.unity.com/en/games/51c4cc8b-b2fc-4f07-a06d-968e66fd5fc3/polished" target="_blank" rel="noopener">Play game ↗</a><a class="source" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026" target="_blank" rel="noopener">Source ↗</a><a class="source" href="https://github.com/EyeInDisguise/Jamie-Hackathon-2026/blob/main/README.ja.md" lang="ja" target="_blank" rel="noopener">日本語 ↗</a></div></div>
+          </div>
+          <details id="rfid-system"><summary><span><span class="small-index">01.A</span> Inspect the system</span><span class="expand" aria-hidden="true">+</span></summary><div class="inspection"><p class="eyebrow">FROM OBJECT TO ACTION</p><ol class="signal"><li><span>01</span><strong>RFID token</strong><p>Stores an ability string.</p></li><li><span>02</span><strong>Reader + ESP32</strong><p>Reads the token and matches its ability.</p></li><li><span>03</span><strong>Bluetooth input</strong><p>Sends the corresponding number key.</p></li><li><span>04</span><strong>Unity ability</strong><p>Selects the movement ability in-game.</p></li></ol><p class="inspection-note">Unity receives ordinary keyboard input, so the same game works with or without the physical controller.</p></div></details>
+        </article>
+        <article class="secondary"><div class="secondary-index" aria-hidden="true">02</div><div><p class="eyebrow">TEAM PROJECT / UNITY</p><h2>NRL Tackle</h2><p>Gameplay work in a UQ industry project with Nuaxion, including movement, cameras, enemy tracking and tackle behaviour. A full case study will follow when the project material is ready to share.</p></div><span class="status">CASE STUDY IN PREPARATION</span></article>
+      </section>
+      <section id="about" class="about"><div><p class="eyebrow">02 / BEHIND THE WORK</p><h2 class="about-heading">About me</h2></div><div><p>I'm Jamie, a computer science student at UQ. I enjoy building movement systems and exploring how a change in input or a single ability can change the way a game plays.</p><p>My favourite games range from NieR and Death Stranding to Monster Hunter, Overwatch, Minecraft and Plants vs. Zombies: Garden Warfare. I like story-driven games, action games, and experimenting with different ways to play.</p><a class="text-link" href="https://github.com/EyeInDisguise">Find me on GitHub ↗</a></div></section>
+    </main>
+    <footer><span>JAMIE WILLIAMS</span><span>GAMEPLAY · SYSTEMS · PHYSICAL INPUT</span><a href="#main">Back to top ↑</a></footer>
+  </div>
+</body>
+</html>
